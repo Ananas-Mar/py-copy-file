@@ -5,7 +5,7 @@ def copy_file(command: str) -> None:
         file_use = check_command[1]
         file_to_copy = check_command[2]
         if file_use == file_to_copy:
-            pass
+            return
         if use_command == "cp":
             try:
                 with (open(file_use) as file_in,
@@ -14,5 +14,5 @@ def copy_file(command: str) -> None:
                         file_out.write(line)
 
             except Exception:
-                pass
+                print(f"Source file '{file_use}' not found.")
     pass
